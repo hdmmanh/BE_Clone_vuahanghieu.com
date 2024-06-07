@@ -10,7 +10,7 @@ import java.util.List;
 public interface HoaDonChiTietService {
     List<HoaDonChiTiet> getAll();
     void createHoaDonChiTiet(HoaDonChiTiet hoaDonChiTiet);
-    Page<HoaDonChiTiet> findPanigated(int idHD, int pageNo, int pageSize);
+    Page<HoaDonChiTiet> findPanigated(int idHD,int idKH,int idGH, int pageNo, int pageSize);
     HoaDonChiTiet getOne(Integer id);
     void updateHoaDonChiTiet(HoaDonChiTiet hoaDonChiTiet);
     Double tongTien(Integer idHoaDon);

@@ -6,6 +6,8 @@ import com.example.assignment_java5.service.KhachHangService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class KhachHangServiceImpl implements KhachHangService {
     @Autowired
@@ -18,5 +20,10 @@ public class KhachHangServiceImpl implements KhachHangService {
     @Override
     public KhachHang getOne(Integer id) {
         return khachHangRepo.getReferenceById(id);
+    }
+
+    @Override
+    public List<KhachHang> getAll() {
+        return khachHangRepo.findAll();
     }
 }

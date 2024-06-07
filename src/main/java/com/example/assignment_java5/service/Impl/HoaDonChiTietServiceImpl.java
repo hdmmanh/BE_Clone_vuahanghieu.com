@@ -12,10 +12,12 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class HoaDonChiTietServiceImpl implements HoaDonChiTietService {
     @Autowired
     HoaDonChiTietRepository hoaDonChiTietRepository;
+
     @Override
     public List<HoaDonChiTiet> getAll() {
         return hoaDonChiTietRepository.findAll();
@@ -27,9 +29,9 @@ public class HoaDonChiTietServiceImpl implements HoaDonChiTietService {
     }
 
     @Override
-    public Page<HoaDonChiTiet> findPanigated(int idHD,int pageNo, int pageSize) {
-        Pageable pageable = PageRequest.of(pageNo -1 , pageSize);
-        return this.hoaDonChiTietRepository.getAllHDCT(idHD,pageable);
+    public Page<HoaDonChiTiet> findPanigated(int idHD, int idKH, int idGH, int pageNo, int pageSize) {
+        Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
+        return this.hoaDonChiTietRepository.getAllHDCT(idHD, idKH, idGH, pageable);
     }
 
     @Override
