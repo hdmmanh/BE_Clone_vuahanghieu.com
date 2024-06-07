@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -37,31 +38,30 @@ public class BanHangController {
 //        return hoaDonService.createHoaDon(hoaDon);
 //    }
 
-    public String trangThaiHD(HttpSession session) {
-        return (String) session.getAttribute("trangThaiHD");
-    }
+
 
     @GetMapping("/list-san-pham")
     public String listSP(Model model, HoaDon hoaDon, KhachHang khachHang, HttpSession session, GioHang gioHang) {
-        if (hoaDonService.getAll().size() == 0 || session.getAttribute("trangThaiSauDatHang").equals("Chờ xác nhận")) {
+        if (hoaDonService.getAll().size() == 0 || session.getAttribute("trangThaiSauDatHang").equals("Chờ xác nhận") || session.getAttribute("trangThaiSauDatHang") == null) {
             hoaDon.setNgay_tao(new Date());
             hoaDon.setNgay_sua(new Date());
             hoaDon.setTrangThai("Đang mua sắm");
-            if (khachHangService.getAll().size() == 0){
+            if (khachHangService.getAll().size() == 0) {
                 khachHangService.createKhachHang(khachHang);
-                hoaDon.setKhachHang(khachHang);
+                session.setAttribute("khachHang", khachHang);
+            }
+            hoaDon.setKhachHang((KhachHang) session.getAttribute("khachHang"));
+            gioHang.setKhachHang(khachHang);
+            if (gioHangService.getAll().size() == 0) {
+                gioHangService.create(gioHang);
+                session.setAttribute("gioHang", gioHang);
             }
 
-            gioHang.setKhachHang(khachHang);
-            if (gioHangService.getAll().size() == 0){
-                gioHangService.create(gioHang);
-            }
 
             hoaDonService.createHoaDon(hoaDon);
 
             session.setAttribute("hoaDon", hoaDon);
-            session.setAttribute("khachHang", khachHang);
-            session.setAttribute("gioHang", gioHang);
+
 
             session.setAttribute("trangThaiHD", hoaDon.getTrangThai());
             session.setAttribute("trangThaiSauDatHang", "Đang mua sắm");
@@ -79,13 +79,13 @@ public class BanHangController {
 
     @GetMapping("/gio-hang")
     public String hienThiGioHang(Model model, @SessionAttribute("hoaDon") HoaDon hoaDon,
-                                 @SessionAttribute("gioHang") GioHang gioHang, @SessionAttribute("khachHang") KhachHang khachHang) {
-        return findPaginated(1, model, hoaDon, gioHang, khachHang);
+                                 @SessionAttribute("gioHang") GioHang gioHang, @SessionAttribute("khachHang") KhachHang khachHang, HttpSession session) {
+        return findPaginated(1, model, hoaDon, gioHang, khachHang, session);
     }
 
     @GetMapping("/pageGH/{pageNo}")
     public String findPaginated(@PathVariable("pageNo") Integer pageNo, Model model, @SessionAttribute("hoaDon") HoaDon hoaDon,
-                                @SessionAttribute("gioHang") GioHang gioHang, @SessionAttribute("khachHang") KhachHang khachHang) {
+                                @SessionAttribute("gioHang") GioHang gioHang, @SessionAttribute("khachHang") KhachHang khachHang, HttpSession session) {
         int pageSize = 5;
 
         Page<HoaDonChiTiet> page = hoaDonChiTietService.findPanigated(hoaDon.getId(), gioHang.getId(), khachHang.getId(), pageNo, pageSize);
@@ -191,12 +191,14 @@ public class BanHangController {
             hoaDon.setSo_dien_thoai(hoaDonUpdate.getSo_dien_thoai());
             hoaDon.setDia_chi(hoaDonUpdate.getDia_chi());
 
-//            KhachHang khachHang = khachHangService.getOne((Integer) session.getAttribute("idKH"));
+            KhachHang khachHang1 = khachHangService.getOne(khachHang.getId());
 
-            khachHang.setHo_ten(hoTen);
-            khachHang.setDia_chi(hoaDonUpdate.getDia_chi());
-            khachHang.setSdt(hoaDonUpdate.getSo_dien_thoai());
-            hoaDon.setKhachHang(khachHang);
+            khachHang1.setHo_ten(hoTen);
+            khachHang1.setDia_chi(hoaDonUpdate.getDia_chi());
+            khachHang1.setSdt(hoaDonUpdate.getSo_dien_thoai());
+            khachHangService.createKhachHang(khachHang1);
+
+            hoaDon.setKhachHang(khachHang1);
 
             List<Integer> listIdHoaDon = hoaDonChiTietService.listIdHDCT(hoaDon.getId());
             for (int id : listIdHoaDon) {
@@ -216,8 +218,25 @@ public class BanHangController {
     @GetMapping("/ban-hang")
     public String banHang(Model model) {
         model.addAttribute("listHoaDon", hoaDonService.getAll());
+
         return "BanHang/BanHang";
     }
 
-
+    @GetMapping("/ban-hang/edit")
+    public String editHoaDon(@RequestParam(name = "id") Integer id, Model model) {
+       model.addAttribute("chiTietHoaDon", hoaDonChiTietService.getAllHDCT(id));
+        System.out.println( hoaDonChiTietService.getAllHDCT(id));
+//       Double TongTien = hoaDonChiTietService.tongTien_BanHang(id);
+//       model.addAttribute("tongTien_BanHang",TongTien);
+        return "BanHang/DetailHoaDon";
+    }
+    @ModelAttribute("listTrangThaiHoaDon")
+    public List<String> listTTHoaDon(){
+        List<String> list = new ArrayList<>();
+        list.add("Đang mua sắm");
+        list.add("Chờ xác nhận");
+        list.add("Đang giao hàng");
+        list.add("Đã giao hàng");
+        return list;
+    }
 }

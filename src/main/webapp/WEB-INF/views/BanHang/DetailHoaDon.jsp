@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <!doctype html>
@@ -203,7 +204,7 @@
     </div>
 
     <div class="dashboard container-fluid ps-0 pe-0">
-        <div class="site-bar" style="height: 750px">
+        <div class="site-bar">
             <ul>
                 <li class="item-site-bar"><a href="">Dashboard</a></li>
                 <li class="item-site-bar"><a href="/ban-hang">Bán hàng</a></li>
@@ -216,69 +217,37 @@
             </ul>
         </div>
         <div class="content-admin">
-            <h3 style="color:aliceblue " class="ms-3 mt-3 mb-3">Hóa đơn</h3>
-            <form class="container form-edit" action="/ban-hang/update?id=${detail.id}" method="post">
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="ma_danh_muc" value="${detail.id}" readonly>
-                    <label>Mã hóa đơn</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="ten_danh_muc" value="${detail.khachHang.ho_ten}">
-                    <label>Tên khách hàng</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="ten_danh_muc" value="${detail.dia_chi}">
-                    <label>Địa chỉ khách hàng</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="ten_danh_muc" value="${detail.so_dien_thoai}">
-                    <label>Số điện thoại khách hàng</label>
-                </div>
-                <label style="margin-left: 0;color: #f3f4f6">Trạng thái đơn hàng</label>
-                <select class="form-select mb-3">
-                    <c:forEach items="${listTrangThaiHoaDon}" var="tt">
-                        <option value="${tt}" ${detail.trangThai.equals(tt) ? 'selected' : ''}>${tt}</option>
-                    </c:forEach>
-                </select>
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="ten_danh_muc"
-                           value="<fmt:formatNumber value="${tongTien_BanHang}" pattern="#,##0 đ"/>" readonly>
-                    <label>Tổng thanh toán</label>
-                </div>
-                <button class="btn btn-primary mt-3" type="submit">Update</button>
-            </form>
+            <h3 style="color:aliceblue " class="ms-3 mt-3 mb-3">Chi tiết hóa đơn</h3>
+
             <div class="table-content">
                 <table class="table table-dark table-striped mb-0 table-san-pham">
                     <thead>
                     <tr>
                         <th scope="col">STT</th>
-                        <th scope="col">ID</th>
-                        <th scope="col">Tên khách hàng</th>
-                        <th scope="col">Trạng thái</th>
-                        <th scope="col">Ngày tạo</th>
-                        <th scope="col" style="width: 100px">Ngày sửa</th>
-                        <th scope="col">Địa chỉ</th>
-                        <th scope="col">Số điện thoại</th>
-                        <th scope="col">Hành động</th>
+                        <th scope="col">ID hóa đơn</th>
+                        <th scope="col">Mã sản phẩm</th>
+                        <th scope="col">Tên sản phẩm</th>
+                        <th scope="col">Số lượng</th>
+                        <th scope="col">Tổng tiền</th>
+
 
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${listHoaDon}" var="hd" varStatus="i">
+                    <c:forEach items="${chiTietHoaDon}" var="cthd" varStatus="i">
                         <tr style="vertical-align: middle">
                             <th scope="row">
                                 <c:out value="${ (currentPage - 1) * pageSize + i.index + 1}"/>
                             </th>
-                            <td>${hd.id}</td>
-                            <td>${hd.khachHang.ho_ten}</td>
-                            <td>${hd.trangThai}</td>
-                            <td>${hd.ngay_tao}</td>
-                            <td>${hd.ngay_sua}</td>
-                            <td>${hd.dia_chi}</td>
-                            <td>${hd.so_dien_thoai}</td>
+                            <td>${cthd.hoaDon.id}</td>
+                            <td>${cthd.chiTietSanPham.sanPham.ma_san_pham}</td>
+                            <td>${cthd.chiTietSanPham.sanPham.ten_san_pham}</td>
+                            <td>${cthd.so_luong_mua}</td>
+
+                            <td>${cthd.tong_tien}</td>
                             <td class="button-action">
-                                <a href="/ban-hang/edit?id=${hd.id}" class="btn btn-info">Chi tiết</a>
-                                <a href="/san-pham/delete/${hd.id}"  class="btn btn-primary">Chỉnh sửa</a>
+                                <a href="/ban-hang/edit?id=" class="btn btn-info">Chi tiết</a>
+                                <a href="/san-pham/delete/" onclick="return confirmDelete()" class="btn btn-primary">Xóa</a>
                             </td>
 
                         </tr>
@@ -326,71 +295,14 @@
                 </div>
 
             </div>
-
         </div>
     </div>
 
 
 </div> <!-- Div cuối -->
-<form action="/san-pham/add" method="post">
-    <!-- Modal Add-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" >
-        <div class="modal-dialog" style="min-width: 900px">
-            <div class="modal-content" style="width: 900px">
-                <div class="modal-header" style="min-width: 900px">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Thêm sản phẩm</h1>
-                </div>
-                <div class="modal-body " style="min-width: 900px">
-                    <div class="form-floating ">
-                        <input type="text" class="form-control" name="ma_san_pham" value="${ma_san_pham}">
-                        <label>Mã sản phẩm</label>
-                    </div>
-                    <p class="mb-3" style="color:red">${errorMaSanPham}</p>
-                    <div class="form-floating ">
-                        <input type="text" class="form-control" name="ten_san_pham" value="${ten_san_pham}">
-                        <label>Tên sản phẩm</label>
-                    </div>
 
-                    <p class="mb-3" style="color:red">${errorTenSanPham}</p>
-
-                    <select class="form-select" aria-label="Default select example" name="danhMuc.id">
-                        <c:forEach items="${listDanhMuc}" var="dm">
-                            <option selected hidden="hidden">Chọn danh mục</option>
-                            <option value="${dm.id}">${dm.ten_danh_muc}</option>
-                        </c:forEach>
-
-                    </select>
-                    <div class="product-status d-flex">
-                        <label style="margin-left: 0">Trạng thái</label>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="trang_thai" id="flexRadioDefault1"
-                                   checked value="Đang kinh doanh">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                Đang kinh doanh
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="trang_thai" id="flexRadioDefault2"
-                                   value="Ngừng kinh doanh">
-                            <label class="form-check-label" for="flexRadioDefault2">
-                                Ngừng kinh doanh
-                            </label>
-                        </div>
-
-                    </div>
-
-
-                </div>
-                <div class="modal-footer" style="min-width: 900px">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Save changes</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</form>
 </body>
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
@@ -421,11 +333,5 @@
     confirmDelete = () => {
         return confirm("Bạn có chắc muốn xóa ?");
     }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        var myModal = new bootstrap.Modal(document.getElementById('${openModal}'));
-        myModal.show();
-    });
-
 </script>
 </html>

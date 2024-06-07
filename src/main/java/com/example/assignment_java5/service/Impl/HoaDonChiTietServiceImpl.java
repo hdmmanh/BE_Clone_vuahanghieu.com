@@ -35,6 +35,11 @@ public class HoaDonChiTietServiceImpl implements HoaDonChiTietService {
     }
 
     @Override
+    public List<HoaDonChiTiet> getAllHDCT(int idHD) {
+        return hoaDonChiTietRepository.getHDCT(idHD);
+    }
+
+    @Override
     public HoaDonChiTiet getOne(Integer id) {
         return hoaDonChiTietRepository.getReferenceById(id);
     }
@@ -48,6 +53,11 @@ public class HoaDonChiTietServiceImpl implements HoaDonChiTietService {
     @Override
     public Double tongTien(Integer idHoaDon) {
         return hoaDonChiTietRepository.tongTienHoaDon(idHoaDon);
+    }
+
+    @Override
+    public Double tongTien_BanHang(Integer idHoaDon) {
+        return hoaDonChiTietRepository.tongTienHoaDon_BanHang(idHoaDon);
     }
 
     @Override
