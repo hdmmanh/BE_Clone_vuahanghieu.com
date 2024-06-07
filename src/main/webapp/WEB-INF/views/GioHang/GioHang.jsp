@@ -223,6 +223,7 @@
                         <th scope="col" style="text-align: center">Giá</th>
                         <th scope="col" style="text-align: center">Số lượng</th>
                         <th scope="col" style="text-align: center">Thành tiền</th>
+                        <th scope="col" style="text-align: center">Xóa sản phẩm</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -249,8 +250,13 @@
                                 <fmt:formatNumber value="${sp_gh.chiTietSanPham.gia_ban * sp_gh.so_luong_mua}"
                                                   pattern="#,##0 đ"/>
                             </td>
+                            <td style="vertical-align: middle">
+                                <a  href="/gio-hang/delete-san-pham?id=${sp_gh.id}" onclick="return confirm('Bạn có muốn xóa sản phẩm này không ?')">
+                                    <i class="fa-solid fa-trash" style="color: black"></i></a>
+                            </td>
                         </tr>
                         <form action="/gio-hang/tinh-tien-them-so-luong" method="get">
+                            <input name="idCTSP" value="${sp_gh.chiTietSanPham.id}" hidden="hidden">
                             <!-- Modal Thêm số lượng-->
                             <div class="modal fade" id="themSoLuongModal-${sp_gh.id}" tabindex="-1"
                                  aria-labelledby="themSoLuongModalLabel-${sp_gh.id}" aria-hidden="true">
@@ -268,6 +274,7 @@
                                                 <label for="floatingInput-${sp_gh.id}">Nhập số lượng sản phẩm muốn
                                                     thêm...</label>
                                             </div>
+                                            <p style="color: red">${errorSoLuongThem}</p>
                                         </div>
                                         <div class="modal-footer" style="margin:0">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
@@ -604,7 +611,7 @@
                 </div>
                 <div class="modal-footer" style="margin:0">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" >ĐẶT HÀNG
+                    <button type="submit" class="btn btn-primary">ĐẶT HÀNG
                     </button>
                 </div>
             </div>
@@ -644,6 +651,10 @@
     document.addEventListener('DOMContentLoaded', function () {
         var modalDatHang = new bootstrap.Modal(document.getElementById('${openDatHangModal}'));
         modalDatHang.show();
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+        var modalThemSoLuong = new bootstrap.Modal(document.getElementById('${openthemSoLuongModal}-${idOpenModal}'));
+        modalThemSoLuong.show();
     });
 
     document.addEventListener("DOMContentLoaded", function () {

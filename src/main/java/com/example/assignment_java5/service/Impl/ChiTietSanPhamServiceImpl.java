@@ -1,5 +1,6 @@
 package com.example.assignment_java5.service.Impl;
 
+import com.example.assignment_java5.DTO.ChiTietSanPhamDTO;
 import com.example.assignment_java5.model.ChiTietSanPham;
 import com.example.assignment_java5.repository.ChiTietSanPhamRepository;
 import com.example.assignment_java5.service.ChiTietSanPhamService;
@@ -22,6 +23,12 @@ public class ChiTietSanPhamServiceImpl implements ChiTietSanPhamService {
     }
 
     @Override
+    public Page<ChiTietSanPham> findPanigated(int pageNo, int pageSize) {
+        Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
+        return this.chiTietSanPhamRepository.findAll(pageable);
+    }
+
+    @Override
     public ChiTietSanPham getOne(Integer id) {
         return chiTietSanPhamRepository.getOne(id);
     }
@@ -30,5 +37,20 @@ public class ChiTietSanPhamServiceImpl implements ChiTietSanPhamService {
     public Page<ChiTietSanPham> findPaginated(int pageNo, int pageSize) {
         Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
         return this.chiTietSanPhamRepository.findAll(pageable);
+    }
+
+    @Override
+    public void updateChiTietSanPham(ChiTietSanPham chiTietSanPham) {
+        chiTietSanPhamRepository.save(chiTietSanPham);
+    }
+
+    @Override
+    public Integer getSoLuong(int idCTSP) {
+        return null;
+    }
+
+    @Override
+    public List<ChiTietSanPhamDTO> filterByKieuDang(String tenKieuDang) {
+        return chiTietSanPhamRepository.filterByKieuDang(tenKieuDang);
     }
 }

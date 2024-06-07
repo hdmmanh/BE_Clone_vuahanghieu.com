@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <!doctype html>
@@ -219,33 +220,33 @@
             <h3 style="color:aliceblue " class="ms-3 mt-3 mb-3">Hóa đơn</h3>
             <form class="container form-edit" action="/ban-hang/update?id=${detail.id}" method="post">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="ma_danh_muc" value="${detail.id}" readonly>
+                    <input type="text" class="form-control"  value="${detail.id}" readonly>
                     <label>Mã hóa đơn</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="ten_danh_muc" value="${detail.khachHang.ho_ten}">
+                    <input type="text" class="form-control"  value="${detail.khachHang.ho_ten}" readonly>
                     <label>Tên khách hàng</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="ten_danh_muc" value="${detail.dia_chi}">
+                    <input type="text" class="form-control" name="dia_chi" value="${detail.dia_chi}">
                     <label>Địa chỉ khách hàng</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="ten_danh_muc" value="${detail.so_dien_thoai}">
+                    <input type="text" class="form-control" name="so_dien_thoai" value="${detail.so_dien_thoai}">
                     <label>Số điện thoại khách hàng</label>
                 </div>
                 <label style="margin-left: 0;color: #f3f4f6">Trạng thái đơn hàng</label>
-                <select class="form-select mb-3">
+                <select class="form-select mb-3" name="trangThai">
                     <c:forEach items="${listTrangThaiHoaDon}" var="tt">
                         <option value="${tt}" ${detail.trangThai.equals(tt) ? 'selected' : ''}>${tt}</option>
                     </c:forEach>
                 </select>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="ten_danh_muc"
+                    <input type="text" class="form-control"
                            value="<fmt:formatNumber value="${tongTien_BanHang}" pattern="#,##0 đ"/>" readonly>
                     <label>Tổng thanh toán</label>
                 </div>
-                <button class="btn btn-primary mt-3" type="submit">Update</button>
+                <button class="btn btn-primary " type="submit">Update</button>
             </form>
             <div class="table-content">
                 <table class="table table-dark table-striped mb-0 table-san-pham">
@@ -278,7 +279,7 @@
                             <td>${hd.so_dien_thoai}</td>
                             <td class="button-action">
                                 <a href="/ban-hang/edit?id=${hd.id}" class="btn btn-info">Chi tiết</a>
-                                <a href="/san-pham/delete/${hd.id}"  class="btn btn-primary">Chỉnh sửa</a>
+                                <a href="/ban-hang/load-hoa-don?id=${hd.id}"  class="btn btn-primary">Chỉnh sửa</a>
                             </td>
 
                         </tr>

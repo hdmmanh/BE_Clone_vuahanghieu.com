@@ -24,13 +24,13 @@ public interface HoaDonChiTietRepository extends JpaRepository<HoaDonChiTiet, In
             "JOIN gio_hang ON khach_hang.id = gio_hang.id_khach_hang\n" +
             "WHERE hdct.id_hoa_don = :idHD AND hoa_don.trang_thai = N'Đang mua sắm'\n" +
             "and khach_hang.id = :idKH and gio_hang.id = :idGH;\n", nativeQuery = true)
-    Page<HoaDonChiTiet> getAllHDCT(@Param("idHD") int idHD,@Param("idKH") int idKH,@Param("idGH") int idGH, Pageable pageable);
+    Page<HoaDonChiTiet> getAllHDCT(@Param("idHD") int idHD, @Param("idKH") int idKH, @Param("idGH") int idGH, Pageable pageable);
 
     @Query(value = "SELECT hdct.* \n" +
             "FROM hdct\n" +
             "JOIN hoa_don ON hdct.id_hoa_don = hoa_don.id\n" +
             "WHERE hdct.id_hoa_don = :idHD AND hoa_don.trang_thai = N'Chờ xác nhận'"
-          ,nativeQuery = true)
+            , nativeQuery = true)
     List<HoaDonChiTiet> getHDCT(@Param("idHD") int idHD);
 
     @Query(value = "select id from hdct where id_hoa_don = :idHD", nativeQuery = true)
@@ -44,4 +44,14 @@ public interface HoaDonChiTietRepository extends JpaRepository<HoaDonChiTiet, In
     @Query(value = "select sum(tong_tien * so_luong_mua) from hdct \n" +
             "where id_hoa_don = ?1 AND hdct.trang_thai = N'Chờ xác nhận' ", nativeQuery = true)
     Double tongTienHoaDon_BanHang(Integer idHoaDon);
+
+    @Query(value = "SELECT id_ctsp from hdct \n" +
+            "JOIN ctsp on hdct.id_ctsp = ctsp.id\n" +
+            "JOIN hoa_don on hdct.id_hoa_don = hoa_don.id\n" +
+            "where hoa_don.id =:idHD", nativeQuery = true)
+    List<Integer> getAllId_CTSP_In_HoaDon(@Param("idHD") int idHD);
+    @Query(value = "SELECT so_luong_mua from hdct \n" +
+            "JOIN hoa_don on hdct.id_hoa_don = hoa_don.id\n" +
+            "where hoa_don.id =:idHD", nativeQuery = true)
+    List<Integer> getAllSoLuong_CTSP_In_HoaDon(@Param("idHD") int idHD);
 }

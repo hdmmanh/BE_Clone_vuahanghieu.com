@@ -14,7 +14,10 @@ public interface HoaDonChiTietService {
     List<HoaDonChiTiet> getAllHDCT(int idHD);
     HoaDonChiTiet getOne(Integer id);
     void updateHoaDonChiTiet(HoaDonChiTiet hoaDonChiTiet);
+    void deleteHoaDonChiTiet(Integer id);
     Double tongTien(Integer idHoaDon);
     Double tongTien_BanHang(Integer idHoaDon);
     List<Integer> listIdHDCT(Integer idHD);
+    List<Integer> getAllId_CTSP_In_HoaDon(Integer idHD);
+    List<Integer> getAllSoLuong_CTSP_In_HoaDon(Integer idHD);
 }

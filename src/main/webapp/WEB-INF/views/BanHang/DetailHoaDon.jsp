@@ -224,10 +224,12 @@
                     <thead>
                     <tr>
                         <th scope="col">STT</th>
-                        <th scope="col">ID hóa đơn</th>
+                        <th scope="col">ID chi tiết sản phẩm</th>
                         <th scope="col">Mã sản phẩm</th>
                         <th scope="col">Tên sản phẩm</th>
                         <th scope="col">Số lượng</th>
+                        <th scope="col">Màu</th>
+                        <th scope="col">Size</th>
                         <th scope="col">Tổng tiền</th>
 
 
@@ -239,16 +241,19 @@
                             <th scope="row">
                                 <c:out value="${ (currentPage - 1) * pageSize + i.index + 1}"/>
                             </th>
-                            <td>${cthd.hoaDon.id}</td>
+                            <td>${cthd.chiTietSanPham.id}</td>
                             <td>${cthd.chiTietSanPham.sanPham.ma_san_pham}</td>
                             <td>${cthd.chiTietSanPham.sanPham.ten_san_pham}</td>
                             <td>${cthd.so_luong_mua}</td>
-
-                            <td>${cthd.tong_tien}</td>
-                            <td class="button-action">
-                                <a href="/ban-hang/edit?id=" class="btn btn-info">Chi tiết</a>
-                                <a href="/san-pham/delete/" onclick="return confirmDelete()" class="btn btn-primary">Xóa</a>
+                            <td>${cthd.chiTietSanPham.mauSac.ten_mau}</td>
+                            <td>${cthd.chiTietSanPham.size.ten_size}</td>
+                            <td>
+                                <fmt:formatNumber value=" ${cthd.tong_tien * cthd.so_luong_mua}" pattern="#,##0 đ"/>
                             </td>
+<%--                            <td class="button-action">--%>
+<%--                                <a href="/ban-hang/edit?id=" class="btn btn-info">Chi tiết</a>--%>
+<%--                                <a href="/san-pham/delete/" onclick="return confirmDelete()" class="btn btn-primary">Xóa</a>--%>
+<%--                            </td>--%>
 
                         </tr>
                     </c:forEach>
