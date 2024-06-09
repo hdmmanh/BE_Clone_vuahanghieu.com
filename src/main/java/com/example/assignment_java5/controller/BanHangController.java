@@ -41,7 +41,7 @@ public class BanHangController {
 
     @GetMapping("/list-san-pham")
     public String listSP(Model model, HoaDon hoaDon, KhachHang khachHang, HttpSession session, GioHang gioHang) {
-        if (hoaDonService.getAll().size() == 0 || session.getAttribute("trangThaiSauDatHang").equals("Chờ xác nhận") || session.getAttribute("trangThaiSauDatHang") == null) {
+        if (hoaDonService.getAll().size() == 0 || (session.getAttribute("trangThaiSauDatHang").equals("Chờ xác nhận") || hoaDonService.getAll().size() > 0)) {
             hoaDon.setNgay_tao(new Date());
             hoaDon.setNgay_sua(new Date());
             hoaDon.setTrangThai("Đang mua sắm");

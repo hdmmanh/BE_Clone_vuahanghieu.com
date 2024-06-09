@@ -467,28 +467,28 @@
                     </ul>
                 </div>
 
-                <div class="filter-sex">
-                    <p>Giới tính</p>
+<%--                <div class="filter-sex">--%>
+<%--                    <p>Giới tính</p>--%>
 
-                    <ul class="list-filter-sex">
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-sex">Nam</span>
+<%--                    <ul class="list-filter-sex">--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-sex">Nam</span>--%>
 
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-sex">Nữ</span>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-sex">Nữ</span>--%>
 
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-sex">Unisex</span>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-sex">Unisex</span>--%>
 
-                        </li>
+<%--                        </li>--%>
 
-                    </ul>
-                </div>
+<%--                    </ul>--%>
+<%--                </div>--%>
 
                 <div class="filter-scroll">
                     <p>Kiểu dáng</p>
@@ -933,138 +933,106 @@
                     </ul>
                 </div>
 
-                <div class="filter-scroll">
-                    <p>Xuất xứ</p>
-                    <input type="text" placeholder="Tìm kiếm xuất xứ">
-                    <ul class="list-filter-scroll">
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Mỹ</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Pháp</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Ý</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Hàn quốc</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Đức</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Anh</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Nhật bản</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Việt Nam</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Thụy Điển</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Thụy Sỹ</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Tây Ban Nha</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Trung Quốc</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Hà Lan</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Ba Lan</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Úc</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Argentina</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Hy Lạp</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Bỉ</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="filter-scroll">
-                    <p>Phân loại</p>
-
-                    <ul class="list-filter-scroll" style="max-height: 105px;">
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Bộ sản phẩm</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Khẩu trang</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Đồ bơi</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-
-                    </ul>
-                </div>
-
-                <div class="filter-scroll">
-                    <p>Gifts</p>
-                    <ul class="list-filter-scroll" style="max-height: 35px;">
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Set quà tặng</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
+<%--                <div class="filter-scroll">--%>
+<%--                    <p>Xuất xứ</p>--%>
+<%--                    <input type="text" placeholder="Tìm kiếm xuất xứ">--%>
+<%--                    <ul class="list-filter-scroll">--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Mỹ</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Pháp</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Ý</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Hàn quốc</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Đức</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Anh</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Nhật bản</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Việt Nam</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Thụy Điển</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Thụy Sỹ</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Tây Ban Nha</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Trung Quốc</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Hà Lan</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Ba Lan</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Úc</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Argentina</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Hy Lạp</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Bỉ</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                    </ul>--%>
+<%--                </div>--%>
 
 
-                    </ul>
-                </div>
+
+
 
                 <div class="filter-scroll">
                     <p>Màu sắc</p>
@@ -1424,142 +1392,142 @@
                     </ul>
                 </div>
 
-                <div class="filter-scroll">
-                    <p>Chất liệu</p>
-                    <input type="text" placeholder="Tìm kiếm chất liệu">
-                    <ul class="list-filter-scroll">
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Da cao cấp</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">100% Cotton</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">100% Polyester</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Cao su</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Cotton</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Vải cao cấp</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Da nhân tạo</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Vải dệt</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Cotton/Polyester</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Polyester</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Da + Vải cao cấp</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Canvas</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Da/Vải</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Chất liệu tổng hợp</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Da lộn</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Vải lưới</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Da bò</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">100% Polyeste</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Cotton, Elastane</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Len</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Vải và da</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Polyester, Nylon</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Cotton, polyurethane</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Polyester, Elastane</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Vải lưới cao cấp</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Polyester, Cotton</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                    </ul>
-                </div>
+<%--                <div class="filter-scroll">--%>
+<%--                    <p>Chất liệu</p>--%>
+<%--                    <input type="text" placeholder="Tìm kiếm chất liệu">--%>
+<%--                    <ul class="list-filter-scroll">--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Da cao cấp</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">100% Cotton</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">100% Polyester</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Cao su</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Cotton</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Vải cao cấp</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Da nhân tạo</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Vải dệt</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Cotton/Polyester</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Polyester</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Da + Vải cao cấp</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Canvas</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Da/Vải</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Chất liệu tổng hợp</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Da lộn</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Vải lưới</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Da bò</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">100% Polyeste</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Cotton, Elastane</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Len</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Vải và da</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Polyester, Nylon</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Cotton, polyurethane</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Polyester, Elastane</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Vải lưới cao cấp</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                        <li>--%>
+<%--                            <input type="checkbox">--%>
+<%--                            <span class="name-brand">Polyester, Cotton</span>--%>
+<%--                            <span class="quantity-in-stock">(99)</span>--%>
+<%--                        </li>--%>
+<%--                    </ul>--%>
+<%--                </div>--%>
 
                 <div class="filter-scroll">
                     <p>Size thời trang</p>
@@ -1580,11 +1548,7 @@
                             <span class="name-brand">L</span>
                             <span class="quantity-in-stock">(99)</span>
                         </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">XS</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
+
                         <li>
                             <input type="checkbox">
                             <span class="name-brand">XL</span>
@@ -1592,129 +1556,13 @@
                         </li>
                         <li>
                             <input type="checkbox">
-                            <span class="name-brand">1</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">3</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">38</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">4</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">39</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">40</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">2</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
                             <span class="name-brand">XXL</span>
                             <span class="quantity-in-stock">(99)</span>
                         </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">48</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">5</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">46</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">32</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">44</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
+
                     </ul>
                 </div>
 
-                <div class="filter-scroll">
-                    <p>Mặt hàng</p>
-                    <ul class="list-filter-scroll" style="max-height: 105px;">
-
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Có sẵn</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Order</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Hàng hiệu used</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="filter-scroll">
-                    <p>Phong cách</p>
-                    <ul class="list-filter-scroll" style="max-height: 200px;">
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Mạnh mẽ, trẻ trung, hiện đại</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Ấm áp, hiện đại, nam tính</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Hiện đại, trẻ trung</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Cuốn hút, mạnh mẽ, nam tính</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Hiện đại, năng động, trẻ trung</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                        <li>
-                            <input type="checkbox">
-                            <span class="name-brand">Ấm áp, gợi cảm</span>
-                            <span class="quantity-in-stock">(99)</span>
-                        </li>
-                    </ul>
-                </div>
 
                 <div class="filter-scroll ">
                     <p>Khoảng giá</p>
@@ -1725,7 +1573,6 @@
 
                     </div>
                     <button type="submit" class="button-filter-price">Áp dụng</button>
-
                 </div>
             </div>
         </form>
