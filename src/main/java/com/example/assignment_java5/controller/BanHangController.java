@@ -64,7 +64,7 @@ public class BanHangController {
             session.setAttribute("trangThaiSauDatHang", "Đang mua sắm");
         }
 
-        return findPanigated(model, 2);
+        return findPanigated(model, 1);
     }
 
     @GetMapping("/pageSP/{pageNo}")
@@ -78,18 +78,14 @@ public class BanHangController {
     }
 
     @GetMapping("/list-san-pham/filter")
-    public String filter(@RequestParam("kieuDang") String kieuDang, Model model) {
-        model.addAttribute("listSP", chiTietSanPhamService.filterByKieuDang(kieuDang));
-        System.out.println(chiTietSanPhamService.filterByKieuDang(kieuDang));
+    public String filter(@RequestParam("kieuDang") String kieuDangs , Model model) {
+        System.out.println(kieuDangs);
+        model.addAttribute("listSP", chiTietSanPhamService.filterByKieuDang(kieuDangs));
         return "Client/ListSanPham";
-
     }
 
-    @GetMapping("/test")
-    public String test(HttpSession session) {
-        System.out.println(session.getAttribute("ngayTao"));
-        return "redirect:/gio-hang";
-    }
+
+
 
     @GetMapping("/gio-hang")
     public String hienThiGioHang(Model model, @SessionAttribute("hoaDon") HoaDon hoaDon,
@@ -165,6 +161,7 @@ public class BanHangController {
     public String gioHang(@PathVariable(value = "idCTSP") Integer id, Model model, HttpSession session) {
 
         ChiTietSanPham chiTietSanPham = chiTietSanPhamService.getOne(id);
+
 
         HoaDonChiTiet hoaDonChiTiet = new HoaDonChiTiet();
         hoaDonChiTiet.setChiTietSanPham(chiTietSanPham);

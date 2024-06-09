@@ -1,6 +1,5 @@
 package com.example.assignment_java5.service.Impl;
 
-import com.example.assignment_java5.DTO.ChiTietSanPhamDTO;
 import com.example.assignment_java5.model.ChiTietSanPham;
 import com.example.assignment_java5.repository.ChiTietSanPhamRepository;
 import com.example.assignment_java5.service.ChiTietSanPhamService;
@@ -50,7 +49,7 @@ public class ChiTietSanPhamServiceImpl implements ChiTietSanPhamService {
     }
 
     @Override
-    public List<ChiTietSanPhamDTO> filterByKieuDang(String tenKieuDang) {
-        return chiTietSanPhamRepository.filterByKieuDang(tenKieuDang);
+    public List<ChiTietSanPham> filterByKieuDang(String tenKieuDangs) {
+        return chiTietSanPhamRepository.filterByKieuDang(tenKieuDangs);
     }
 }

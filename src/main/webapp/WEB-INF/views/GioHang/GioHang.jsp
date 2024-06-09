@@ -221,6 +221,8 @@
                         <th scope="col" style="text-align: center">Ảnh</th>
                         <th scope="col" style="text-align: center">Tên sản phẩm</th>
                         <th scope="col" style="text-align: center">Giá</th>
+                        <th scope="col" style="text-align: center">Màu</th>
+                        <th scope="col" style="text-align: center">Size</th>
                         <th scope="col" style="text-align: center">Số lượng</th>
                         <th scope="col" style="text-align: center">Thành tiền</th>
                         <th scope="col" style="text-align: center">Xóa sản phẩm</th>
@@ -237,6 +239,8 @@
                             <td style="vertical-align: middle">
                                 <fmt:formatNumber value="${sp_gh.chiTietSanPham.gia_ban}" pattern="#,##0 đ"/>
                             </td>
+                            <td style="vertical-align: middle">${sp_gh.chiTietSanPham.mauSac.ten_mau}</td>
+                            <td style="vertical-align: middle">${sp_gh.chiTietSanPham.size.ten_size}</td>
                             <td style="vertical-align: middle">
                                 <i class="fa-solid fa-minus"
                                    style="padding: 5px;background-color: #BDB8B8;border-radius: 5px;"
@@ -611,7 +615,7 @@
                 </div>
                 <div class="modal-footer" style="margin:0">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">ĐẶT HÀNG
+                    <button type="submit" class="btn btn-primary" >ĐẶT HÀNG
                     </button>
                 </div>
             </div>

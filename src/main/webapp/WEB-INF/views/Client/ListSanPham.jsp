@@ -493,7 +493,7 @@
                 <div class="filter-scroll">
                     <p>Kiểu dáng</p>
                     <input type="text" placeholder="Tìm kiếm kiểu dáng">
-                    <ul class="list-filter-scroll">
+                    <ul class="list-filter-scroll" >
                         <li>
                             <input type="checkbox">
                             <span class="name-brand">Áo Polo</span>
@@ -510,12 +510,12 @@
                             <span class="quantity-in-stock">(99)</span>
                         </li>
                         <li>
-                            <input type="checkbox" name="kieuDang" value="Áo sơ mi">
+                            <input type="checkbox"  value="Áo sơ mi" name="kieuDang">
                             <span class="name-brand">Áo sơ mi</span>
                             <span class="quantity-in-stock">(99)</span>
                         </li>
                         <li>
-                            <input type="checkbox" name="kieuDang" value="Áo thun">
+                            <input type="checkbox"  value="Áo thun" name="kieuDang">
                             <span class="name-brand" >Áo thun</span>
                             <span class="quantity-in-stock">(99)</span>
                         </li>
@@ -1753,7 +1753,7 @@
 
                 </c:forEach>
             </div>
-            <div class="paging">
+            <div class="paging mt-3">
                 <c:if test="${totalPages > 1}">
 
                     <div>
